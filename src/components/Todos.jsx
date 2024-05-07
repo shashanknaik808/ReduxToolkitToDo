@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from 'react-redux'
-import {removeTodo} from '../features/todo/todoSlice'
+import { removeTodo } from '../features/todo/todoSlice'
 
 
 function Todos() {
@@ -9,7 +9,15 @@ function Todos() {
     const dispatch = useDispatch()
 
     return (
-        <div>Todos</div>
+        <>
+            <div>Todos</div>
+            <ul className="list-none">
+                {todos.map((todo) => (
+                    <li key={todo.id}>{todo.text}</li>
+                ))}
+            </ul>
+        </>
+
     )
 }
 
