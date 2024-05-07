@@ -13,11 +13,13 @@ function Todos() {
             <div>Todos</div>
             <ul className="list-none">
                 {todos.map((todo) => (
-                    <li key={todo.id}>{todo.text}</li>
+                    <li key={todo.id}>
+                        {todo.text}
+                        <button onClick={() => dispatch(removeTodo(todo.id))}>Delete</button>
+                    </li>
                 ))}
             </ul>
         </>
-
     )
 }
 
